@@ -5,4 +5,6 @@ RUN apt-get update && \
     	fail2ban \
  && rm -rf /var/lib/apt/lists/*
  
- ENTRYPOINT /usr/bin/fail2ban-client
+ ADD entrypoint.sh /entrypoint.sh
+ 
+ ENTRYPOINT ["/entrypoint.sh"]
