@@ -5,6 +5,9 @@ RUN apt-get update && \
     	fail2ban \
  && rm -rf /var/lib/apt/lists/*
  
- ADD entrypoint.sh /entrypoint.sh
+RUN mv /etc/fail2ban/jail.conf /etc/fail2ban/jail.conf.default
  
- ENTRYPOINT ["/entrypoint.sh"]
+ADD entrypoint.sh /entrypoint.sh
+ADD /etc/fail2ban/jail.conf /jail.conf 
+ 
+ENTRYPOINT ["/entrypoint.sh"]
