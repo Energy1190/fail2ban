@@ -8,6 +8,6 @@ RUN apt-get update && \
 RUN mv /etc/fail2ban/jail.conf /etc/fail2ban/jail.conf.default
  
 ADD entrypoint.sh /entrypoint.sh
-ADD /etc/fail2ban/jail.conf /jail.conf 
+ADD jail.conf /etc/fail2ban/jail.conf
  
 ENTRYPOINT ["/entrypoint.sh"]
