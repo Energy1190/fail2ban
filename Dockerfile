@@ -13,8 +13,8 @@ RUN apt-get update && \
  
 RUN pip3 install -e git+https://github.com/fail2ban/fail2ban.git#egg=fail2ban && \
 	pip install -e git+https://github.com/fail2ban/fail2ban.git#egg=fail2ban && \
-	pip3 install -e git+https://github.com/systemd/python-systemd.git#egg=fail2ban && \
-	pip install -e git+https://github.com/systemd/python-systemd.git#egg=fail2ban && \
+	pip3 install -e git+https://github.com/systemd/python-systemd.git#egg=systemd && \
+	pip install -e git+https://github.com/systemd/python-systemd.git#egg=systemd && \
 	mkdir /var/run/fail2ban && \
 	mkdir /var/lib/fail2ban && \
 	cd /src/fail2ban && \
