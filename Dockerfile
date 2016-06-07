@@ -9,6 +9,10 @@ RUN apt-get update && \
 	python3-setuptools \
 	python-setuptools \
 	python3-dev \
+	python-dev \
+	gcc \
+	libsystemd-{journal,daemon,login,id128}-dev \ 
+	pkg-config \
  && rm -rf /var/lib/apt/lists/*
  
 RUN pip3 install -e git+https://github.com/fail2ban/fail2ban.git#egg=fail2ban && \
