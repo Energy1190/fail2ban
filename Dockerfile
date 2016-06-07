@@ -19,7 +19,7 @@ RUN pip3 install -e git+https://github.com/fail2ban/fail2ban.git#egg=fail2ban &&
 	mkdir /var/lib/fail2ban && \
 	cd /src/fail2ban && \
 	cp files/debian-initd /etc/init.d/fail2ban && \
-	cp -rf config /etc/fail2ban && \
+	cp -r config /etc/fail2ban && \
 	update-rc.d fail2ban defaults
  
 ADD entrypoint.sh /entrypoint.sh
