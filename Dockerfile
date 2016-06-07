@@ -6,6 +6,8 @@ RUN apt-get update && \
 	make \
 	python-pip \
 	python3-pip \
+	python-systemd \
+	python3-systemd \
 	python3-setuptools \
 	python-setuptools \
 	python3-dev \
@@ -14,6 +16,7 @@ RUN apt-get update && \
 RUN pip3 install -e git+https://github.com/fail2ban/fail2ban.git@${PY_ETCD_VER}#egg=fail2ban && \
 	pip install -e git+https://github.com/fail2ban/fail2ban.git@${PY_ETCD_VER}#egg=fail2ban && \
 	mkdir /var/run/fail2ban && \
+	mkdir /var/lib/fail2ban && \
 	cd /src/fail2ban && \
 	cp files/debian-initd /etc/init.d/fail2ban && \
 	cp -rf config /etc/fail2ban && \
