@@ -11,7 +11,10 @@ RUN apt-get update && \
 	python3-dev \
 	python-dev \
 	gcc \
-	libsystemd-{journal,daemon,login,id128}-dev \ 
+	libsystemd-journal-dev \
+	libsystemd-daemon-dev \
+	libsystemd-login-dev \
+	libsystemd-id128-dev \ 
 	pkg-config \
  && rm -rf /var/lib/apt/lists/*
  
