@@ -23,6 +23,6 @@ RUN pip3 install -e git+https://github.com/fail2ban/fail2ban.git#egg=fail2ban &&
 	update-rc.d fail2ban defaults
  
 ADD entrypoint.sh /entrypoint.sh
- 
-ENTRYPOINT ["/entrypoint.sh"]
-CMD [""]
+
+CMD ["/src/fail2ban/bin/fail2ban-client", "start"]
+CMD ["/usr/bin/tail", "-f", "/dev/null"]
