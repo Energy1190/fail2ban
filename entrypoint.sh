@@ -1,3 +1,3 @@
 #!bin/bash
 
-/usr/bin/fail2ban-client $@
+/src/fail2ban/bin/fail2ban-client $@

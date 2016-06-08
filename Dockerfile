@@ -10,18 +10,11 @@ RUN apt-get update && \
 	python-setuptools \
 	python3-dev \
 	python-dev \
-	gcc \
-	libsystemd-journal-dev \
-	libsystemd-daemon-dev \
-	libsystemd-login-dev \
-	libsystemd-id128-dev \ 
-	pkg-config \
+	iptables \
  && rm -rf /var/lib/apt/lists/*
  
 RUN pip3 install -e git+https://github.com/fail2ban/fail2ban.git#egg=fail2ban && \
 	pip install -e git+https://github.com/fail2ban/fail2ban.git#egg=fail2ban && \
-	pip3 install -e git+https://github.com/systemd/python-systemd.git#egg=systemd && \
-	pip install -e git+https://github.com/systemd/python-systemd.git#egg=systemd && \
 	mkdir /var/run/fail2ban && \
 	mkdir /var/lib/fail2ban && \
 	cd /src/fail2ban && \
@@ -30,6 +23,6 @@ RUN pip3 install -e git+https://github.com/fail2ban/fail2ban.git#egg=fail2ban &&
 	update-rc.d fail2ban defaults
  
 ADD entrypoint.sh /entrypoint.sh
-ADD jail.conf /etc/fail2ban/jail.conf
  
 ENTRYPOINT ["/entrypoint.sh"]
+CMD [""]
